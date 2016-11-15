@@ -10,5 +10,8 @@
 		<include file="src/main/resources/changelog/1.0.0.1/issue-001.xml"/>
 		<include file="src/main/resources/data/1.0.0.1/issue-001.xml" />
 
+		<!-- VERSAO 1.0.0.2 -->
+		<include file="src/main/resources/changelog/1.0.0.2/issue-002.xml"/>
+		<include file="src/main/resources/data/1.0.0.2/issue-002.xml" />
 
 </databaseChangeLog>
