@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>liquibase-demo</groupId>
+	<artifactId>liquibase-demo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>liquibase-demo</name>
+	<packaging>pom</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
+		<liquibase.changeLogFile>src/main/resources/liquibase.xml</liquibase.changeLogFile>
+		<liquibase.driver>org.postgresql.Driver</liquibase.driver>
+		<liquibase.url>jdbc:postgresql://localhost:5432/demo</liquibase.url>
+		<liquibase.username>postgres</liquibase.username>
+		<liquibase.password>123456</liquibase.password>
+		<liquibase.version>3.2.0</liquibase.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.liquibase</groupId>
+				<artifactId>liquibase-maven-plugin</artifactId>
+				<version>${liquibase.version}</version>
+				<executions>
+					<execution>
+						<configuration>
+							<driver>${liquibase.driver}</driver>
+							<url>${liquibase.url}</url>
+							<username>${liquibase.username}</username>
+							<password>${liquibase.password}</password>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>8.3-603.jdbc4</version>
+		</dependency>
+	</dependencies>
+
+	<repositories>
+		<repository>
+	        <id>sonatype-snapshots</id>
+	        <name>OSS Sonatype Snapshots</name>
+	        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+	    </repository>
+		<repository>
+			<id>www</id>
+			<url>http://repository.sourcesense.com/nexus/content/repositories/public/</url>
+		</repository>
+		<repository>
+			<id>java.net.maven1</id>
+			<name>java.net</name>
+			<url>http://download.java.net/maven/1</url>
+		</repository>
+		<repository>
+			<id>java.net.maven2</id>
+			<name>java.net</name>
+			<url>http://download.java.net/maven/2</url>
+		</repository>
+		<repository>
+			<id>org.apache.commons</id>
+			<url>http://apache.mirror.pop-sc.rnp.br/apache/</url>
+		</repository>
+		<repository>
+			<id>jboss-public-repository-group</id>
+			<name>JBoss Public Repository Group</name>
+			<url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>jboss-public-repository-group-release</id>
+			<name>JBoss Public Repository Group</name>
+			<url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>prime-repo</id>
+			<name>PrimeFaces Maven Repository</name>
+			<url>http://repository.primefaces.org</url>
+		</repository>
+	</repositories>
+
+</project>

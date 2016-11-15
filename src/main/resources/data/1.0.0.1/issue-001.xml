@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog   xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet id="201611142236" author="ortiz">
+		<insert tableName="PESSOA">
+			<column name="id" autoIncrement="true"/>
+			<column name="nm_nome" value="Luciano Ortiz" />
+			<column name="dt_nascimento" value="2020-01-01" />
+		</insert>
+		<insert tableName="PESSOA">
+			<column name="id" autoIncrement="true"/>
+			<column name="nm_nome" value="Antonio Dias" />
+			<column name="dt_nascimento" value="2023-03-03" />
+		</insert>
+		<insert tableName="PESSOA">
+			<column name="id" autoIncrement="true"/>
+			<column name="nm_nome" value="Willian Marques" />
+			<column name="dt_nascimento" value="2026-06-06" />
+		</insert>
+		<insert tableName="PESSOA">
+			<column name="id" autoIncrement="true"/>
+			<column name="nm_nome" value="Joni Marques" />
+			<column name="dt_nascimento" value="2030-02-20" />
+		</insert>
+	</changeSet>
+
+	<changeSet id="201611142237" author="ortiz">
+		<loadData tableName="CLIENTE" file="src\main\resources\data\1.0.0.1\clientes.csv">
+			<column name="id" type="NUMERIC"/>
+			<column name="cd_pessoa" type="NUMERIC"/>
+		</loadData>
+	</changeSet>
+
+</databaseChangeLog>

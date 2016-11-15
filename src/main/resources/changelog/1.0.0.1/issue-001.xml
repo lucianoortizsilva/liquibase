@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd  http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<!-- TABELAS -->
+	<changeSet id="201611142230" author="ortiz">
+
+		<createTable tableName="PESSOA">
+			<column name="id" type="int" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false"	primaryKeyName="PK_PESSOA" />
+			</column>
+			<column name="nm_nome" type="varchar(50)">
+				<constraints nullable="false" unique="true"/>
+			</column>
+			<column name="dt_nascimento" type="DATETIME">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+
+		<createTable tableName="CLIENTE">
+			<column name="id" type="int" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false"	primaryKeyName="PK_CLIENTE" />
+			</column>
+			<column name="cd_pessoa" type="int" />
+		</createTable>
+
+	</changeSet>
+
+	<!-- FK -->
+	<changeSet id="201511302205" author="ortiz">
+		<addForeignKeyConstraint constraintName="FK_CLIENTE_PESSOA"  baseTableName="CLIENTE" baseColumnNames="cd_pessoa" referencedTableName="PESSOA" referencedColumnNames="id"/>
+	</changeSet>
+
+</databaseChangeLog>
