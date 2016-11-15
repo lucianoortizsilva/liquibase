@@ -45,14 +45,19 @@
 			<artifactId>postgresql</artifactId>
 			<version>8.3-603.jdbc4</version>
 		</dependency>
+		<dependency>
+			<groupId>org.yaml</groupId>
+			<artifactId>snakeyaml</artifactId>
+			<version>1.12</version>
+		</dependency>
 	</dependencies>
 
 	<repositories>
 		<repository>
-	        <id>sonatype-snapshots</id>
-	        <name>OSS Sonatype Snapshots</name>
-	        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-	    </repository>
+			<id>sonatype-snapshots</id>
+			<name>OSS Sonatype Snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</repository>
 		<repository>
 			<id>www</id>
 			<url>http://repository.sourcesense.com/nexus/content/repositories/public/</url>

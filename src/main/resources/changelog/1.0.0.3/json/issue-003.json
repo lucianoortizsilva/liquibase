@@ -1,0 +1,55 @@
+{
+    'databaseChangeLog' : [
+        {
+            'preConditions': [
+                {
+                    'runningAs': {
+                        'username': 'postgres'
+                    }
+                }
+            ]
+        },
+
+        {
+            'changeSet': {
+                'id': '201611151740',
+                'author': 'ortiz',
+                'changes': [
+                    {
+                        'createTable': {
+                            'tableName': 'ESTADO',
+                            'columns': [
+                                {
+                                    'column': {
+                                        'name': 'id',
+                                        'type': 'int',
+                                        'autoIncrement': true,
+                                        'constraints': {
+                                            'primaryKey': true,
+                                            'nullable': false
+                                        },
+                                    }
+                                },
+                                {
+                                    'column': {
+                                        'name': 'NM_NOME',
+                                        'type': 'varchar(50)'
+                                    }
+                                },
+                                {
+                                    'column': {
+                                        'name': 'SIGLA',
+                                        'type': 'varchar(2)',
+                                        'constraints': {
+                                            'nullable': false
+                                        },
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

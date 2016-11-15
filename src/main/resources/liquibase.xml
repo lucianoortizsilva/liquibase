@@ -4,7 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
-                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
 		<!-- VERSAO 1.0.0.1 -->
 		<include file="src/main/resources/changelog/1.0.0.1/issue-001.xml"/>
@@ -13,5 +13,9 @@
 		<!-- VERSAO 1.0.0.2 -->
 		<include file="src/main/resources/changelog/1.0.0.2/issue-002.xml"/>
 		<include file="src/main/resources/data/1.0.0.2/issue-002.xml" />
+
+		<!-- VERSAO 1.0.0.3 -->
+		<include file="src/main/resources/changelog/1.0.0.3/issue-003.xml"/>
+		<include file="src/main/resources/data/1.0.0.3/issue-003.xml"/>
 
 </databaseChangeLog>
